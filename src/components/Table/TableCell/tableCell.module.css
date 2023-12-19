@@ -1,0 +1,16 @@
+.link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    flex: 1;
+    font-size: 14px;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+}
