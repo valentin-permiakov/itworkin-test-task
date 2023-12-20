@@ -1,0 +1,28 @@
+.main {
+    padding-top: 40px;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tableControls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 20px;
+    align-self: flex-end;
+    background-color: #F4F7FC;
+}
+
+.tableContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

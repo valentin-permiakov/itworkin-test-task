@@ -1,9 +1,9 @@
 import React from 'react';
+import { ParsedDataObj } from '../../../api/requestData';
 import TableRow from '../TableRow/TableRow';
-import { DataObject } from '../../../store/dataSlice';
 
 type TableBodyProps = {
-  data: Array<DataObject>;
+  data: Array<ParsedDataObj>;
 };
 
 const TableBody: React.FC<TableBodyProps> = ({ data }) => {

@@ -1,0 +1,33 @@
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.pageBtn {
+    display: flex;
+    padding: 2px 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: #F7F9FC;
+    box-shadow: 0px 2px 5px 0px rgba(89, 96, 120, 0.10), 0px 0px 0px 1px rgba(70, 79, 96, 0.16), 0px 1px 1px 0px rgba(0, 0, 0, 0.10);
+}
+.pageBtn:disabled {
+    box-shadow: 0px 0px 0px 1px rgba(70, 79, 96, 0.24);
+}
+
+.pageBtn svg {
+    stroke: #464F60;
+}
+
+.pageBtn:disabled svg {
+    stroke: #868FA0;
+}
+
+.pageBtn.pageRight {
+    transform: rotate(180deg);
+}

@@ -16,8 +16,10 @@ const TableCell: React.FC<TableCellProps> = ({ content, isLink }) => {
         >
           {content}
         </a>
+      ) : content === 'undefined' ? (
+        'unknown'
       ) : (
-        content || 'No data'
+        content
       )}
     </td>
   );
