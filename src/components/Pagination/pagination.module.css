@@ -2,5 +2,11 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin-bottom: 100px;
+    padding: 10px 20px;
+    background-color: #F4F7FC;
+}
+
+.switcherContainer {
+    display: flex;
+    flex-wrap: nowrap;
 }

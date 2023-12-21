@@ -9,6 +9,7 @@ type DataSlice = {
   itemsPerPage: number;
   shownData: Array<ParsedDataObj>;
   totalPages: number;
+  startIndex: number;
 };
 
 const initialState: DataSlice = {
@@ -17,6 +18,7 @@ const initialState: DataSlice = {
   itemsPerPage: 10,
   shownData: [],
   totalPages: 0,
+  startIndex: 0,
 };
 
 export const dataSlice = createSlice({
@@ -27,7 +29,7 @@ export const dataSlice = createSlice({
       state.data = action.payload;
       state.currentPage = 1;
       state.totalPages = Math.ceil(state.data.length / state.itemsPerPage);
-      state.shownData = state.data.slice(0, state.itemsPerPage);
+      state.shownData = state.data.slice(state.startIndex, state.itemsPerPage);
     },
     sortByProperty: (
       state,
@@ -54,11 +56,22 @@ export const dataSlice = createSlice({
         })
         .slice(0, state.itemsPerPage);
     },
+    searchByName: (state, action: PayloadAction<string>) => {
+      if (action.payload.length === 0) {
+        state.shownData = state.data.slice(0, state.itemsPerPage);
+      } else {
+        state.shownData = state.data.filter((obj) =>
+          obj.name.toLowerCase().includes(action.payload.toLowerCase())
+        );
+      }
+    },
+
+    // pagination
     setCurrentPage: (state, action: PayloadAction<number>) => {
       state.currentPage += action.payload;
-      const startIndex = (state.currentPage - 1) * state.itemsPerPage;
-      const endIndex = startIndex + state.itemsPerPage;
-      state.shownData = state.data.slice(startIndex, endIndex);
+      state.startIndex = (state.currentPage - 1) * state.itemsPerPage;
+      const endIndex = state.startIndex + state.itemsPerPage;
+      state.shownData = state.data.slice(state.startIndex, endIndex);
     },
     changeItemsPerPage: (state, action: PayloadAction<number>) => {
       state.currentPage = 1;
@@ -72,6 +85,7 @@ export const dataSlice = createSlice({
 export const {
   updateData,
   sortByProperty,
+  searchByName,
   setCurrentPage,
   changeItemsPerPage,
 } = dataSlice.actions;

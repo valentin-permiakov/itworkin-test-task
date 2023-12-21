@@ -1,0 +1,22 @@
+.skeletonTable {
+    width: 1020px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    height: 500px;
+    animation: loadingAnimation 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes loadingAnimation {
+    0% {
+      background-color: #f0f0f0;
+      transform: scale(1);
+    }
+    50% {
+      background-color: #e0e0e0;
+      transform: scale(1.05);
+    }
+    100% {
+      background-color: #f0f0f0;
+      transform: scale(1);
+    }
+  }

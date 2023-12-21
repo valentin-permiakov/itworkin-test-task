@@ -25,7 +25,11 @@ const PageSwitcher: React.FC<PageSwitcherProps> = () => {
           size={16}
         />
       </button>
-      {`${dataSlice.currentPage}/${dataSlice.totalPages}`}
+      <div>
+        {dataSlice.currentPage}
+        <span className={styles.totalPages}>/{dataSlice.totalPages}</span>
+      </div>
+
       <button
         onClick={() => changePage(1)}
         disabled={dataSlice.currentPage === dataSlice.totalPages}

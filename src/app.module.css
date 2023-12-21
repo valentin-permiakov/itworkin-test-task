@@ -1,5 +1,6 @@
 .main {
     padding-top: 40px;
+    padding-bottom: 100px;
 }
 
 .container {
@@ -8,6 +9,8 @@
     display:flex;
     flex-direction: column;
     position: relative;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(69, 75, 87, 0.12), 0px 0px 0px 1px rgba(152, 161, 178, 0.10);
 }
 
 .tableControls {
@@ -23,6 +26,6 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
 }

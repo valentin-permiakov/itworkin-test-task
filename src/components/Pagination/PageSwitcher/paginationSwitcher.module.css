@@ -31,3 +31,7 @@
 .pageBtn.pageRight {
     transform: rotate(180deg);
 }
+
+.totalPages{
+    color: #687182;
+}

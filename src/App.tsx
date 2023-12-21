@@ -8,6 +8,8 @@ import Table from './components/Table/Table';
 import { changeIsLoading } from './store/apiSlice';
 import { updateData } from './store/dataSlice';
 import { useAppDispatch, useAppSelector } from './store/hooks';
+import Skeleton from './components/Skeleton/Skeleton';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
   const isLoading = useAppSelector((state) => state.apiChoice.isLoading);
@@ -33,11 +35,11 @@ function App() {
     <main className={styles.main}>
       <div className={styles.container}>
         {isLoading ? (
-          <p>loading...</p>
+          <Skeleton />
         ) : (
           <>
             <div className={styles.tableControls}>
-              <p>Search</p>
+              <SearchBar />
               <ApiChoice />
             </div>
             {apiData.length > 0 && (

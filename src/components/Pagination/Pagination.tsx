@@ -10,7 +10,7 @@ const Pagination: React.FC<PaginationProps> = () => {
   return (
     <div className={styles.pagination}>
       <EntryCount />
-      <div>
+      <div className={styles.switcherContainer}>
         <PaginationChoice />
         <PageSwitcher />
       </div>

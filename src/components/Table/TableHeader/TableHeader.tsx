@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './tableHeader.module.css';
 import { useAppDispatch } from '../../../store/hooks';
 import { DataKeys, sortByProperty } from '../../../store/dataSlice';
+import { EIcons, Icon } from '../../../icons/Icon';
 
 type TableHeaderProps = {
   columnKeys: Array<DataKeys>;
@@ -34,6 +35,10 @@ const TableHeader: React.FC<TableHeaderProps> = ({ columnKeys }) => {
             onClick={() => handleSortClick(key)}
           >
             {key}
+            <Icon
+              name={EIcons.sortIcon}
+              size={16}
+            />
           </th>
         ))}
       </tr>
